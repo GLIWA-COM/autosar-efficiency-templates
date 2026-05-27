@@ -1,5 +1,6 @@
 [project]
 site_name = "AUTOSAR Efficiency Templates"
+site_url  = "https://gliwa-com.github.io/autosar-efficiency-templates/" 
 copyright = "GLIWA GmbH & Co. KG, Weilheim i.OB. All rights reserved"
 extra_css = [
     "stylesheets/extra.css",

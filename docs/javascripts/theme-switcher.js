@@ -4,12 +4,12 @@
   // Use root-relative paths (start with /) to avoid 404s on sub-pages
   const PATHS = {
     favicon: {
-      light: "/assets/Logo_GLIWA_NoName_250x180_black.png",
-      dark:  "/assets/Logo_GLIWA_NoName_250x180.png"
+      light: "assets/Logo_GLIWA_NoName_250x180_black.png",
+      dark:  "assets/Logo_GLIWA_NoName_250x180.png"
     },
     logo: {
-      light: "/assets/Logo_GLIWA_NoName_250x180_black.png",
-      dark:  "/assets/Logo_GLIWA_NoName_250x180.png"
+      light: "assets/Logo_GLIWA_NoName_250x180_black.png",
+      dark:  "assets/Logo_GLIWA_NoName_250x180.png"
     }
   };
   // ----------------------------------------------------------

@@ -1,0 +1,61 @@
+[project]
+site_name = "Scheduling optimization"
+copyright = "GLIWA GmbH & Co. KG, Weilheim i.OB. All rights reserved"
+extra_css = [
+    "stylesheets/extra.css",
+    "https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+]
+extra_javascript  = [
+    "javascripts/theme-switcher.js",
+    "javascripts/image-lightbox.js",
+    "https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"
+]
+
+[project.theme]
+logo = "assets/Logo_GLIWA_NoName_250x180.png"
+
+[[project.theme.palette]] 
+scheme  = "default"
+primary = "green"
+accent  = "light green"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme  = "slate"
+primary = "green"
+accent  = "lime"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[project.plugins.offline]
+[project.plugins.glightbox]
+
+[project.markdown_extensions.abbr]
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.toc]
+permalink = true
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+[project.markdown_extensions.pymdownx.betterem]
+smart_enable = "all"
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.emoji]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
+[project.markdown_extensions.pymdownx.highlight]
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.keys]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.smartsymbols]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+[project.markdown_extensions.pymdownx.tilde]

@@ -1,0 +1,53 @@
+/* Center Markdown Tables (requires md_in_html extension) */
+.center-table {
+    text-align: center;
+}
+
+.md-typeset .center-table :is(td,th):not([align]) {
+    /* Reset alignment for table cells */
+    text-align: initial;
+}
+
+/* Apply text justification and automatic hyphenation to paragraphs */
+.md-content p {
+  text-align: justify;
+  
+  /* Enable automatic hyphenation */
+  hyphens: auto;
+  
+  /* You must also specify the language for proper hyphenation rules */
+  /* The browser usually inherits this, but explicitly setting it is safer */
+  -webkit-hyphens: auto; /* For older WebKit-based browsers */
+  -ms-hyphens: auto;     /* For older Microsoft browsers */
+}
+
+/* Ensure the language is declared on the root HTML element */
+/* The browser needs this to know the correct hyphenation rules for syllables */
+html {
+  lang: 'en'; /* Replace 'en' with your document's language code (e.g., 'de', 'fr', etc.) */
+}
+
+.md-grid {
+  max-width: 70rem; 
+}
+
+/* Reduce vertical padding in all tables */
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.4em 0.6em; /* Default is approx 0.9em 1.2em */
+  line-height: 1.4;     /* Slightly tighter line height */
+}
+
+.image-center-wrapper {
+  display: flex;           /* FlexBox container */
+  justify-content: center; /* Center it */
+  margin: 1.5rem 0;        /* Margin for aesthetics */
+}
+
+.table-caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--md-default-fg-color--light); /* Matches standard caption color */
+  margin-top: -1rem; /* Pulls the caption up closer to the table */
+  margin-bottom: 2rem;
+}

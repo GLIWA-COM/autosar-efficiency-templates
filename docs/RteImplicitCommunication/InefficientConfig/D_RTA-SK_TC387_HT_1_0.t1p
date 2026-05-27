@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<T1 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="2.0">
+  <Project Name="ETAS RTA-CAR" MainTickDuration="10" SyncTimeBitLength="32" T1targetVersion="2" EnableStreamingUI="true">
+    <Comment>Project file "D:\Work\rta-sk_tc387_CAN_only 1\Compiler_specific\output\D_RTA-SK_TC387_HT_1_0.t1p" auto-generated from "D:\Work\rta-sk_tc387_CAN_only 1\RTA-SK\Target_specific\RTA-SK\Os\src\RTAOS.rta" on 24.02.2026 at 16:27:00</Comment>
+    <System Name="Core0" TickDuration="26.6666666666667" TraceBufferSize="4000" MaxAbsTime="65535" KernelPriority="255" MinPreempPrio="1" SystemType="AUTOSAR OS" T1HandlerPeriod="10" SID="2" BID="1568910708" LicInfo1="POTxxxx" LicInfo2="LicIDyyyy" StaticRunnableID="1023" ForegroundT1contEnabled="false">
+      <Comment>Core0</Comment>
+      <BasicSchedulingFrameEvent Type="T1_START" SystemElementID="8" SystemElementType="Task" />
+      <SystemElement Name="GTMATOM0SR0_ISR" Priority="1002" ID="14" Type="Interrupt" SymbolRef="Os_Entry_GTMATOM0SR0_ISR" />
+      <SystemElement Name="CrossCoreInterrupt" Priority="1001" ID="15" Type="Interrupt" SymbolRef="CrossCoreInterrupt" />
+      <SystemElement Name="InitTask" Priority="20" ID="13" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_InitTask" />
+      <SystemElement Name="InitTask_WdgM" Priority="19" ID="12" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_InitTask_WdgM" />
+      <SystemElement Name="OsTask_1ms_Core1" Priority="15" ID="11" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_1ms_Core1" />
+      <SystemElement Name="OsTask_1ms" Priority="10" ID="9" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_1ms" />
+      <SystemElement Name="OsTask_BSW_Core1" Priority="10" ID="10" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_BSW_Core1" />
+      <SystemElement Name="OsTask_10ms" Priority="9" ID="8" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_10ms" />
+      <SystemElement Name="OsTask_100ms" Priority="8" ID="7" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_100ms" />
+      <SystemElement Name="OsTask_MS" Priority="4" ID="6" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_MS" />
+      <SystemElement Name="OsTask_DRE_ASW" Priority="2" ID="4" Type="Task" MaxActivations="2" SymbolRef="Os_Entry_OsTask_DRE_ASW" />
+      <SystemElement Name="OsTask_QM" Priority="2" ID="5" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_QM" />
+      <SystemElement Name="OsTask_Background_Core0" Priority="1" ID="2" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_Background_Core0" />
+      <SystemElement Name="OsTask_Background_Core1" Priority="1" ID="3" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_Background_Core1" />
+      <SystemElement Name="Idle" ID="1" Type="Task" MaxActivations="1" SymbolRef="Os_Cbk_Idle" ExcludeFromCpuLoad="true" />
+      <SystemElement Name="Check Integration" ID="0" Type="Stopwatch">
+        <Constraint Type="StopwatchGrossTime" SubType="Max">
+          <Value>20000026</Value>
+        </Constraint>
+      </SystemElement>
+      <SystemElement Name="T1_SW_BswM_MainFunction" ID="3" Type="Stopwatch" />
+      <SystemElement Name="T1_SW_EcuM_StartupTwo" ID="1" Type="Stopwatch" />
+      <SystemElement Name="T1_SW_SchM_IModeInit" ID="2" Type="Stopwatch" />
+      <SystemElement Name="Check Integration Sync Timer Ticks" ID="0" Type="UserEvent" />
+      <SystemElement Name="printf string" ID="1" Type="UserEvent" />
+      <SystemElement Name="16 bit Data tracing" ID="2" Type="UserEvent" />
+      <SystemElement Name="32 bit Data tracing" ID="3" Type="UserEvent" />
+      <SystemElement Name="Binary Data tracing" ID="4" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 0" ID="32" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 1" ID="33" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 2" ID="34" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 3" ID="35" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 4" ID="36" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 5" ID="37" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 0" ID="38" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 1" ID="39" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 2" ID="40" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 3" ID="41" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 4" ID="42" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 5" ID="43" Type="UserEvent" />
+      <SystemElement Name="T1_errorCount Increase" ID="44" Type="UserEvent">
+        <Info InfoStr="Core0 Error" Index="0x0" />
+        <Info InfoStr="Core1 Error" Index="0x1" />
+        <Info InfoStr="Core2 Error" Index="0x2" />
+        <Info InfoStr="Core3 Error" Index="0x3" />
+        <Info InfoStr="Core4 Error" Index="0x4" />
+        <Info InfoStr="Core5 Error" Index="0x5" />
+      </SystemElement>
+      <AppFeature Name="Capture Startup Trace">
+        <Mask>1</Mask>
+      </AppFeature>
+      <AppFeature Name="Allow on Target Trigger">
+        <Mask>2</Mask>
+      </AppFeature>
+      <AppFeature Name="Allow T1 Trace Data">
+        <Mask>4</Mask>
+      </AppFeature>
+      <AppFeature Name="Trace the stopwatch T1_SW_CHECK_INTEGRATION_CORE_ALL">
+        <Mask>8</Mask>
+      </AppFeature>
+      <Delay Name="Check Integration" Id="0" />
+      <Symbols>
+        <SymbolFilePath>..\..\..\rta-sk_tc387_CAN_only 1\Compiler_specific\output\D_RTA-SK_TC387_HT_1_0.elf</SymbolFilePath>
+        <AnnotationInclude>D_RTA-SK_TC387_HT_1_0_Core0.t1a</AnnotationInclude>
+      </Symbols>
+      <MeasureOverheads Extended="true">
+        <MainMeasureOverhead>
+          <T1>80.0000000000001</T1>
+        </MainMeasureOverhead>
+        <T1flexMeasureOverhead>
+          <T1>373.33333333333383</T1>
+        </T1flexMeasureOverhead>
+      </MeasureOverheads>
+      <ReportConfiguration>
+        <CsvConfig TimeBase="formatted">
+          <SelectedTimingInformation>
+            <TimingInformation Type="Unknown" SubType="Max" />
+            <TimingInformation Type="Unknown" SubType="Min" />
+            <TimingInformation Type="Unknown" SubType="Average" />
+            <TimingInformation Type="CoreExecTime" SubType="Max" />
+            <TimingInformation Type="CoreExecTime" SubType="Min" />
+            <TimingInformation Type="CoreExecTime" SubType="Average" />
+            <TimingInformation Type="DeltaTime" SubType="Min" />
+          </SelectedTimingInformation>
+        </CsvConfig>
+        <HtmlConfig>
+          <SelectedTimingInformation>
+            <TimingInformation Type="Unknown" SubType="Max" />
+            <TimingInformation Type="Unknown" SubType="Min" />
+            <TimingInformation Type="Unknown" SubType="Average" />
+            <TimingInformation Type="CoreExecTime" SubType="Max" />
+            <TimingInformation Type="CoreExecTime" SubType="Min" />
+            <TimingInformation Type="CoreExecTime" SubType="Average" />
+            <TimingInformation Type="DeltaTime" SubType="Min" />
+            <TimingInformation Type="DeltaTime" SubType="Average" />
+          </SelectedTimingInformation>
+        </HtmlConfig>
+      </ReportConfiguration>
+      <ExternalData>
+        <HeaderContent><![CDATA[
+/************************************************************************************/
+/*! \file           T1_AppInterface.h
+ *
+ *  \brief          Application-specific declarations and macros for T1
+ *
+ *  $Author: hwanjoonkan $
+ *
+ *  $Revision: 81359 $
+ *
+ *  \copyright GLIWA GmbH & Co. KG, Weilheim i.OB. All rights reserved
+ ************************************************************************************/
+
+#ifndef T1_APPINTERFACE_H_
+#define T1_APPINTERFACE_H_ ( 1 )
+
+#define T1_ENABLE ( 1 )
+
+/*----------------------------------------------------------------------------------*/
+/*--- macros required before header includes ---------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+#if defined T1_ENABLE
+/*
+ * Replace the dummy #define T1_GET_RAW_TIME, unless using the same memory-mapped
+ * timer for every core, in which case T1_GET_RAW_TIME is generated in T1_config.h
+ * and this code must be removed or disabled.
+ */
+/* Read non-memory-mapped and/or core-specific trace timer, see examples below. */
+#    include <machine/intrinsics.h>
+#    define T1_GET_RAW_TIME( ) ( (T1_uint32_t)(_mfcr( 0xFC04 )) )
+#    define T1_GET_RAW_TIME_CORE0( ) T1_GET_RAW_TIME( )
+#    define T1_GET_RAW_TIME_CORE1( ) T1_GET_RAW_TIME( )
+/* TriCore performance counter                ( (T1_tickUint_t)(__mfcr( 0xFC04 )) ) */
+/* MPC5xxx read via address cached in SPRG7  ( *(T1_tickUint_t *)(__mfspr( 263 )) ) */
+/* MPC5xxx TimeBase low word (TBL)              ( (T1_tickUint_t)(__mfspr( 268 )) ) */
+#endif /* defined T1_ENABLE && 0 */
+
+/*!
+ * \def T1_GetCoreIdOffset
+ * The T1-TARGET-SW provides a default implementation, using the appropriate hardware
+ * register, if there is no user macro of this name and if the core ID register
+ * content is equal to the T1 logical core ID offset.
+ * Otherwise it is possible to define it at the beginning of T1_AppInterface.h, before
+ * all headers inclusion to read the hardware core ID register and return the
+ * appropriate T1 core ID offset.
+ * \returns the zero-based T1 logical core index
+ */
+/*
+ * For multi-core T1 integrations with Arm cores this must be always defined here.
+ * For example, with the ST Stellar MCU we read the MPIDR register and return 0..5:
+ *  #define T1_GetCoreIdOffset( ) ({                                        \
+ *      T1_uint32_t mpidr, temp;                                            \
+ *      __asm( "MRC p15, 0, %0, c0, c0, 5" : "=r" (mpidr) :: "memory" );    \
+ *      temp = mpidr & ~(mpidr >> 1);                                       \
+ *      temp = temp + (temp >> 7);                                          \
+ *      temp & 0xFFu;                                                       \
+ *  })
+ */
+
+/*----------------------------------------------------------------------------------*/
+/*--- header includes --------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+#include "T1_config.h"
+#include "T1_baseInterface.h"
+#include "T1_scopeInterface.h"
+#include "T1_delayInterface.h"
+#include "T1_contInterface.h"
+#include "T1_flexInterface.h"
+#include "T1_modInterface.h"
+
+/*----------------------------------------------------------------------------------*/
+/*--- macros and inline functions --------------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+/* Backwards compatibility. */
+#define T1_AppRxCallback( _pData ) T1_AppReceiveFrame( ( _pData ), 8u )
+
+#if defined T1_ENABLE
+
+#    if defined T1_DEFN_CONT_UNMAP_CORE_ID
+T1_DEFN_CONT_UNMAP_CORE_ID
+#    endif /* defined T1_DEFN_CONT_UNMAP_CORE_ID */
+
+/*!
+ * Default configuration for all stopwatches. Possible values are
+ * #T1_CONT_CET_STOPWATCH, #T1_CONT_GET_STOPWATCH and #T1_CONT_DATA_AGE_STOPWATCH.
+ * See \ref USER_STOPWATCHES.
+ */
+#    define T1_CONT_DEFAULT_CONFIG_STOPWATCH( idx_ ) T1_CONT_CET_STOPWATCH( idx_ )
+/*!
+ * Default configuration allocating constraints to be used by the T1-HOST-SW.
+ * This macro needs to be commented to manually configure constraints, see
+ * \ref CONSTRAINTS.
+ */
+#    define T1_CONT_DEFAULT_CONFIG_CONSTRAINT        T1_CONT_INVALID_CONSTRAINT
+
+/*!
+ * Each remote core T1.cont semaphore is used by two cores: the tracing core and the
+ * core that runs the T1.cont analysis.
+ */
+#    define T1_CONT_REMOTE_NOF_SEMAPHORE_USERS       ( 2u )
+
+/*!
+ * \def INC_T1_ERROR_COUNT_
+ * \brief Increase the error counter and trace a user event indicating the core
+ * concerned. Halts the tracing if T1_AF_ALLOW_TRIGGER is set.
+ * \param[in] coreId_         the T1 logical ID of the calling core
+ * \param[in] analyzedCoreId_ the T1 logical ID to record in the user event payload
+ */
+#    define INC_T1_ERROR_COUNT_( coreId_, analyzedCoreId_ )                          \
+        do                                                                           \
+        {                                                                            \
+            T1_errorCount[coreId_] < 255u ? ++T1_errorCount[coreId_] : 255u;         \
+            T1_TraceEventUMPC( ( coreId_ ),                                          \
+                               T1_COMBINE_EVENT_INFO( T1_UE_T1_ERR_CORE_ALL,         \
+                                                      ( analyzedCoreId_ ) ) );       \
+            if( T1_IsFeatureEnabled( T1_AF_ALLOW_TRIGGER ) )                         \
+            {                                                                        \
+                (void)T1_SetStopTriggerPC( ( coreId_ ),                              \
+                                           T1_BUFFER_SIZE_PC( coreId_ ) >> 1u );     \
+            }                                                                        \
+        }                                                                            \
+        while( 0 )
+/*!
+ * \def INC_T1_ERROR_COUNT
+ * \brief Increase the error counter and trace a user event indicating the core
+ * concerned. Halts the tracing if T1_AF_ALLOW_TRIGGER is set.
+ * \param[in] coreId_         the T1 logical ID of the calling core
+ */
+#    if 1 == T1_NOF_CORES
+#        define INC_T1_ERROR_COUNT( coreId_ ) INC_T1_ERROR_COUNT_( 0u, 0u )
+#    else /* 1 < T1_NOF_CORES */
+#        define INC_T1_ERROR_COUNT( coreId_ )                                        \
+            INC_T1_ERROR_COUNT_( ( coreId_ ), ( coreId_ ) )
+#    endif /* 1 == T1_NOF_CORES */
+
+/*!
+ * \def INC_T1_ERROR_COUNT_REMOTE
+ * \brief Increase the error counter and trace a user event indicating the core
+ * concerned. Can be used in context where T1.cont remote core is used or when a
+ * non-communicating core calls T1_AppReceiveFrame(). Halts the tracing
+ * if T1_AF_ALLOW_TRIGGER is set.
+ * \param[in] coreId_         the T1 logical ID of the calling core
+ * \param[in] analyzedCoreId_ the T1 logical ID of the core concerned by the issue
+ */
+#    if 1 == T1_NOF_CORES
+#        define INC_T1_ERROR_COUNT_REMOTE( coreId_, analyzedCoreId_ )                \
+            INC_T1_ERROR_COUNT_( 0u, 0u )
+#    else /* 1 < T1_NOF_CORES */
+#        define INC_T1_ERROR_COUNT_REMOTE( coreId_, analyzedCoreId_ )                \
+            INC_T1_ERROR_COUNT_( ( coreId_ ), ( analyzedCoreId_ ) )
+#    endif /* 1 == T1_NOF_CORES */
+
+/*----------------------------------------------------------------------------------*/
+/*--- external declarations for global variables -----------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+#    define T1_START_SEC_CONST_32
+#    include "T1_MemMap.h"
+T1_DeclarePluginTable( T1_pluginTable );
+#    define T1_STOP_SEC_CONST_32
+#    include "T1_MemMap.h"
+
+#    define T1_CHECKED_START_SEC_VAR_POWER_ON_CLEARED_8
+#    include "T1_MemMap.h"
+T1_EXTERN T1_uint8_t T1_CHECKED_SEC_VAR_POWER_ON_CLEARED_8 T1_errorCount[T1_NOF_CORES];
+#    define T1_CHECKED_STOP_SEC_VAR_POWER_ON_CLEARED_8
+#    include "T1_MemMap.h"
+
+#    if !defined T1_DISABLE_T1_CONT && defined T1_CONT_REMOTE
+#        define T1_START_SEC_CONST_32
+#        include "T1_MemMap.h"
+/*! \brief Pointer to the shared data for remote core T1.cont pairs of cores. */
+T1_EXTERN T1_bakery_t * const T1_SEC_CONST_32
+    T1_contRemoteSemPC[T1_NOF_CORES][T1_CONT_REMOTE_NOF_SEMAPHORE_USERS];
+#        define T1_STOP_SEC_CONST_32
+#        include "T1_MemMap.h"
+#    endif /* ! defined T1_DISABLE_T1_CONT && defined T1_CONT_REMOTE */
+
+#    if 1 < T1_NOF_CORES
+#        define T1_CHECKED_START_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+T1_EXTERN T1_uint8_t T1_CHECKED_SEC_VAR_POWER_ON_CLEARED_8
+    T1_coreTriggerCounter[T1_NOF_CORES];
+#        define T1_CHECKED_STOP_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+
+#        define T1_CHECKED_START_SEC_VAR_POWER_ON_CLEARED_16
+#        include "T1_MemMap.h"
+T1_EXTERN T1_uint16_t T1_CHECKED_SEC_VAR_POWER_ON_CLEARED_16 T1_afterXevents;
+#        define T1_CHECKED_STOP_SEC_VAR_POWER_ON_CLEARED_16
+#        include "T1_MemMap.h"
+#    endif /* 1 < T1_NOF_CORES */
+
+#    if defined T1_COMMS_SHARED_MEM_TX || defined T1_COMMS_SHARED_MEM_RX
+#        define T1_CORE_COMMS_START_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+
+#        if defined T1_COMMS_SHARED_MEM_TX
+/* Read and written by T1-TARGET-SW */
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_targetToHostArray[T1_GCP_MAX_TX_FRAME_SIZE];
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_targetToHostHandshakeAnnounce;
+/* Only read by T1-TARGET-SW (except for in T1_AppInit) */
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_targetToHostHandshakeAcknowledge;
+#        endif /* defined T1_COMMS_SHARED_MEM_TX */
+
+#        if defined T1_COMMS_SHARED_MEM_RX
+/* Only read by T1-TARGET-SW (except for in T1_AppInit) */
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_hostToTargetArray[T1_GCP_MAX_RX_FRAME_SIZE];
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_hostToTargetHandshakeAnnounce;
+/* Read and written by T1-TARGET-SW */
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_hostToTargetHandshakeAcknowledge;
+#        endif /* defined T1_COMMS_SHARED_MEM_RX */
+
+#        define T1_CORE_COMMS_STOP_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+
+#        define T1_CORE_COMMS_START_SEC_VAR_POWER_ON_CLEARED_16
+#        include "T1_MemMap.h"
+
+#        if defined T1_COMMS_SHARED_MEM_TX
+/* Read and written by T1-TARGET-SW */
+T1_EXTERN T1_uint16_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_16
+    T1_targetToHostFrameLength;
+#        endif /* defined T1_COMMS_SHARED_MEM_TX */
+
+#        if defined T1_COMMS_SHARED_MEM_RX
+/* Only read by T1-TARGET-SW (except for in T1_AppInit) */
+T1_EXTERN T1_uint16_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_16
+    T1_hostToTargetFrameLength;
+#        endif /* defined T1_COMMS_SHARED_MEM_RX */
+
+#        define T1_CORE_COMMS_STOP_SEC_VAR_POWER_ON_CLEARED_16
+#        include "T1_MemMap.h"
+#    endif /* defined T1_COMMS_SHARED_MEM_TX || defined T1_COMMS_SHARED_MEM_RX */
+
+#    if defined T1_CHECK_INTEGRATION
+#        define T1_CHECKED_START_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+T1_EXTERN T1_uint8_t T1_CHECKED_SEC_VAR_POWER_ON_CLEARED_8 T1_checkIntegrationGlobal;
+#        define T1_CHECKED_STOP_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+#        define T1_START_SEC_CONST_8
+#        include "T1_MemMap.h"
+T1_EXTERN T1_uint8_t * const T1_SEC_CONST_8 T1_checkIntegrationPC[];
+#        define T1_STOP_SEC_CONST_8
+#        include "T1_MemMap.h"
+#    endif /* defined T1_CHECK_INTEGRATION */
+
+#endif /* defined T1_ENABLE */
+
+/*----------------------------------------------------------------------------------*/
+/*--- forward declarations for global functions ------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+/* wrapper functions defined in T1_AppInterface.c */
+#define T1_START_SEC_CODE
+#include "T1_MemMap.h"
+T1_EXTERN void T1_CODE T1_AppSetStopTriggerAllCores( T1_uint8Least_t coreId,
+                                                     T1_nOfEntries_t afterXevents );
+T1_EXTERN void T1_CODE T1_AppInit( void );
+T1_EXTERN void T1_CODE T1_AppBackgroundHandler( void );
+T1_EXTERN void T1_CODE T1_AppHandler( void );
+T1_EXTERN void T1_CODE T1_AppReceiveFrame( T1_uint8_t const T1_FARPTR pData,
+                                           T1_frameSize_t nOfBytes );
+#if defined T1_POLLING_TRANSMIT
+void T1_CODE T1_AppReadData( T1_uint8_t const **ppData, T1_frameSize_t *pNOfBytes );
+#else /* !defined T1_POLLING_TRANSMIT */
+#    define T1_AppReadData( ppData_, pNOfBytes_ ) ( (void)0 )
+#endif /* defined T1_POLLING_TRANSMIT */
+
+#if defined T1_ENABLE && defined T1_CHECK_INTEGRATION
+#    if !defined T1_CHECK_INTEGRATION_INV_PARAM
+#        error Please use the invocation file parameter -checkIntegration to enable the check integration feature!
+#    endif /* ! defined T1_CHECK_INTEGRATION_INV_PARAM */
+#    if !defined T1_SW_CHECK_INTEGRATION_CORE_ALL
+#        error The stopwatch T1_SW_CHECK_INTEGRATION_CORE_ALL used by T1_CHECK_INTEGRATION must be defined!
+#    endif /* ! defined T1_SW_CHECK_INTEGRATION_CORE_ALL */
+#    if !defined T1_UDE_CHECK_INTEGRATION_SYNCTIMER_CORE_ALL
+#        error The user data event T1_UDE_CHECK_INTEGRATION_SYNCTIMER_CORE_ALL used by T1_CHECK_INTEGRATION must be defined!
+#    endif /* ! defined T1_UDE_CHECK_INTEGRATION_SYNCTIMER_CORE_ALL */
+#    if !defined T1_DL_CHECK_INTEGRATION_CORE_ALL
+#        error The delay T1_DL_CHECK_INTEGRATION_CORE_ALL used by T1_CHECK_INTEGRATION must be defined!
+#    endif /* ! defined T1_DL_CHECK_INTEGRATION_CORE_ALL */
+T1_EXTERN void T1_CODE T1_CheckIntegrationInitPC( T1_uint8Least_t coreId );
+T1_EXTERN void T1_CODE T1_CheckIntegrationHandlerPC( T1_uint8Least_t coreId );
+#    define T1_CheckIntegrationInit( )                                               \
+        T1_CheckIntegrationInitPC( T1_GetCoreIdOffset( ) )
+#    define T1_CheckIntegrationHandler( )                                            \
+        T1_CheckIntegrationHandlerPC( T1_GetCoreIdOffset( ) )
+#else /* ! defined T1_ENABLE || ! defined T1_CHECK_INTEGRATION */
+#    define T1_CheckIntegrationInitPC( coreId_ )    ( (void)0 )
+#    define T1_CheckIntegrationHandlerPC( coreId_ ) ( (void)0 )
+#    define T1_CheckIntegrationInit( )              ( (void)0 )
+#    define T1_CheckIntegrationHandler( )           ( (void)0 )
+#endif /* defined T1_ENABLE && defined T1_CHECK_INTEGRATION */
+#define T1_STOP_SEC_CODE
+#include "T1_MemMap.h"
+
+/*----------------------------------------------------------------------------------*/
+
+#endif /* T1_APPINTERFACE_H_ */
+
+       ]]></HeaderContent>
+      </ExternalData>
+      <CommunicationConfig UseSameRxTxChannel="true">
+        <RxChannel>
+          <LayerConfig>
+            <Name>pure T1</Name>
+            <RoutingParameters xmlns:q1="Gliwa-CommunicationConfig" xsi:type="q1:GcpRoutingParameterType">
+              <AppId>0</AppId>
+              <TargetId>2</TargetId>
+            </RoutingParameters>
+            <BusRoutingParameter xmlns:q2="Gliwa-CommunicationConfig" xsi:type="q2:TcpIpRoutingParameterType">
+              <IpAddress>192.168.42.10</IpAddress>
+              <EcuPort>45000</EcuPort>
+              <PcPort>45000</PcPort>
+              <UseUdp>true</UseUdp>
+              <TxDataSize>24</TxDataSize>
+            </BusRoutingParameter>
+          </LayerConfig>
+          <BusRef>
+            <Name>Ethernet</Name>
+            <BusType>ETHERNET</BusType>
+          </BusRef>
+          <Direction>RX</Direction>
+        </RxChannel>
+        <TxChannel>
+          <LayerConfig>
+            <Name>pure T1</Name>
+            <RoutingParameters xmlns:q3="Gliwa-CommunicationConfig" xsi:type="q3:GcpRoutingParameterType">
+              <AppId>0</AppId>
+              <TargetId>2</TargetId>
+            </RoutingParameters>
+            <BusRoutingParameter xmlns:q4="Gliwa-CommunicationConfig" xsi:type="q4:TcpIpRoutingParameterType">
+              <IpAddress>192.168.42.10</IpAddress>
+              <EcuPort>45000</EcuPort>
+              <PcPort>45000</PcPort>
+              <UseUdp>true</UseUdp>
+              <TxDataSize>24</TxDataSize>
+            </BusRoutingParameter>
+          </LayerConfig>
+          <BusRef>
+            <Name>Ethernet</Name>
+            <BusType>ETHERNET</BusType>
+          </BusRef>
+          <Direction>TX</Direction>
+        </TxChannel>
+      </CommunicationConfig>
+    </System>
+    <System Name="Core1" TickDuration="26.6666666666667" TraceBufferSize="4000" MaxAbsTime="65535" KernelPriority="255" MinPreempPrio="1" SystemType="AUTOSAR OS" T1HandlerPeriod="10" SID="3" BID="1568910708" LicInfo1="POTxxxx" LicInfo2="LicIDyyyy" StaticRunnableID="1023" ForegroundT1contEnabled="false">
+      <Comment>Core1</Comment>
+      <BasicSchedulingFrameEvent Type="T1_START" SystemElementID="10" SystemElementType="Task" />
+      <SystemElement Name="GTMATOM0SR0_ISR" Priority="1002" ID="14" Type="Interrupt" SymbolRef="Os_Entry_GTMATOM0SR0_ISR" />
+      <SystemElement Name="CrossCoreInterrupt" Priority="1001" ID="15" Type="Interrupt" SymbolRef="CrossCoreInterrupt" />
+      <SystemElement Name="InitTask" Priority="20" ID="13" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_InitTask" />
+      <SystemElement Name="InitTask_WdgM" Priority="19" ID="12" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_InitTask_WdgM" />
+      <SystemElement Name="OsTask_1ms_Core1" Priority="15" ID="11" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_1ms_Core1" />
+      <SystemElement Name="OsTask_1ms" Priority="10" ID="9" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_1ms" />
+      <SystemElement Name="OsTask_BSW_Core1" Priority="10" ID="10" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_BSW_Core1" />
+      <SystemElement Name="OsTask_10ms" Priority="9" ID="8" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_10ms" />
+      <SystemElement Name="OsTask_100ms" Priority="8" ID="7" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_100ms" />
+      <SystemElement Name="OsTask_MS" Priority="4" ID="6" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_MS" />
+      <SystemElement Name="OsTask_DRE_ASW" Priority="2" ID="4" Type="Task" MaxActivations="2" SymbolRef="Os_Entry_OsTask_DRE_ASW" />
+      <SystemElement Name="OsTask_QM" Priority="2" ID="5" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_QM" />
+      <SystemElement Name="OsTask_Background_Core0" Priority="1" ID="2" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_Background_Core0" />
+      <SystemElement Name="OsTask_Background_Core1" Priority="1" ID="3" Type="Task" MaxActivations="1" SymbolRef="Os_Entry_OsTask_Background_Core1" />
+      <SystemElement Name="Idle" ID="1" Type="Task" MaxActivations="1" SymbolRef="Os_Cbk_Idle" ExcludeFromCpuLoad="true" />
+      <SystemElement Name="Check Integration" ID="0" Type="Stopwatch">
+        <Constraint Type="StopwatchGrossTime" SubType="Max">
+          <Value>20000026</Value>
+        </Constraint>
+      </SystemElement>
+      <SystemElement Name="T1_SW_BswM_MainFunction" ID="3" Type="Stopwatch" />
+      <SystemElement Name="T1_SW_EcuM_StartupTwo" ID="1" Type="Stopwatch" />
+      <SystemElement Name="T1_SW_SchM_IModeInit" ID="2" Type="Stopwatch" />
+      <SystemElement Name="Check Integration Sync Timer Ticks" ID="0" Type="UserEvent" />
+      <SystemElement Name="printf string" ID="1" Type="UserEvent" />
+      <SystemElement Name="16 bit Data tracing" ID="2" Type="UserEvent" />
+      <SystemElement Name="32 bit Data tracing" ID="3" Type="UserEvent" />
+      <SystemElement Name="Binary Data tracing" ID="4" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 0" ID="32" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 1" ID="33" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 2" ID="34" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 3" ID="35" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 4" ID="36" Type="UserEvent" />
+      <SystemElement Name="T1.cont error callback for core 5" ID="37" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 0" ID="38" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 1" ID="39" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 2" ID="40" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 3" ID="41" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 4" ID="42" Type="UserEvent" />
+      <SystemElement Name="T1.cont CPU load callback for core 5" ID="43" Type="UserEvent" />
+      <SystemElement Name="T1_errorCount Increase" ID="44" Type="UserEvent">
+        <Info InfoStr="Core0 Error" Index="0x0" />
+        <Info InfoStr="Core1 Error" Index="0x1" />
+        <Info InfoStr="Core2 Error" Index="0x2" />
+        <Info InfoStr="Core3 Error" Index="0x3" />
+        <Info InfoStr="Core4 Error" Index="0x4" />
+        <Info InfoStr="Core5 Error" Index="0x5" />
+      </SystemElement>
+      <AppFeature Name="Capture Startup Trace">
+        <Mask>1</Mask>
+      </AppFeature>
+      <AppFeature Name="Allow on Target Trigger">
+        <Mask>2</Mask>
+      </AppFeature>
+      <AppFeature Name="Allow T1 Trace Data">
+        <Mask>4</Mask>
+      </AppFeature>
+      <AppFeature Name="Trace the stopwatch T1_SW_CHECK_INTEGRATION_CORE_ALL">
+        <Mask>8</Mask>
+      </AppFeature>
+      <Delay Name="Check Integration" Id="0" />
+      <Symbols>
+        <SymbolFilePath>..\..\..\rta-sk_tc387_CAN_only 1\Compiler_specific\output\D_RTA-SK_TC387_HT_1_0.elf</SymbolFilePath>
+        <AnnotationInclude>D_RTA-SK_TC387_HT_1_0_Core1.t1a</AnnotationInclude>
+      </Symbols>
+      <MeasureOverheads Extended="true">
+        <MainMeasureOverhead>
+          <T1>213.3333333333336</T1>
+        </MainMeasureOverhead>
+        <T1flexMeasureOverhead>
+          <T1>426.6666666666672</T1>
+        </T1flexMeasureOverhead>
+      </MeasureOverheads>
+      <ReportConfiguration>
+        <CsvConfig TimeBase="formatted">
+          <SelectedTimingInformation>
+            <TimingInformation Type="Unknown" SubType="Max" />
+            <TimingInformation Type="Unknown" SubType="Min" />
+            <TimingInformation Type="Unknown" SubType="Average" />
+            <TimingInformation Type="CoreExecTime" SubType="Max" />
+            <TimingInformation Type="CoreExecTime" SubType="Min" />
+            <TimingInformation Type="CoreExecTime" SubType="Average" />
+            <TimingInformation Type="DeltaTime" SubType="Min" />
+          </SelectedTimingInformation>
+        </CsvConfig>
+        <HtmlConfig>
+          <SelectedTimingInformation>
+            <TimingInformation Type="Unknown" SubType="Max" />
+            <TimingInformation Type="Unknown" SubType="Min" />
+            <TimingInformation Type="Unknown" SubType="Average" />
+            <TimingInformation Type="CoreExecTime" SubType="Max" />
+            <TimingInformation Type="CoreExecTime" SubType="Min" />
+            <TimingInformation Type="CoreExecTime" SubType="Average" />
+            <TimingInformation Type="DeltaTime" SubType="Min" />
+            <TimingInformation Type="DeltaTime" SubType="Average" />
+          </SelectedTimingInformation>
+        </HtmlConfig>
+      </ReportConfiguration>
+      <ExternalData>
+        <HeaderContent><![CDATA[
+/************************************************************************************/
+/*! \file           T1_AppInterface.h
+ *
+ *  \brief          Application-specific declarations and macros for T1
+ *
+ *  $Author: hwanjoonkan $
+ *
+ *  $Revision: 81359 $
+ *
+ *  \copyright GLIWA GmbH & Co. KG, Weilheim i.OB. All rights reserved
+ ************************************************************************************/
+
+#ifndef T1_APPINTERFACE_H_
+#define T1_APPINTERFACE_H_ ( 1 )
+
+#define T1_ENABLE ( 1 )
+
+/*----------------------------------------------------------------------------------*/
+/*--- macros required before header includes ---------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+#if defined T1_ENABLE
+/*
+ * Replace the dummy #define T1_GET_RAW_TIME, unless using the same memory-mapped
+ * timer for every core, in which case T1_GET_RAW_TIME is generated in T1_config.h
+ * and this code must be removed or disabled.
+ */
+/* Read non-memory-mapped and/or core-specific trace timer, see examples below. */
+#    include <machine/intrinsics.h>
+#    define T1_GET_RAW_TIME( ) ( (T1_uint32_t)(_mfcr( 0xFC04 )) )
+#    define T1_GET_RAW_TIME_CORE0( ) T1_GET_RAW_TIME( )
+#    define T1_GET_RAW_TIME_CORE1( ) T1_GET_RAW_TIME( )
+/* TriCore performance counter                ( (T1_tickUint_t)(__mfcr( 0xFC04 )) ) */
+/* MPC5xxx read via address cached in SPRG7  ( *(T1_tickUint_t *)(__mfspr( 263 )) ) */
+/* MPC5xxx TimeBase low word (TBL)              ( (T1_tickUint_t)(__mfspr( 268 )) ) */
+#endif /* defined T1_ENABLE && 0 */
+
+/*!
+ * \def T1_GetCoreIdOffset
+ * The T1-TARGET-SW provides a default implementation, using the appropriate hardware
+ * register, if there is no user macro of this name and if the core ID register
+ * content is equal to the T1 logical core ID offset.
+ * Otherwise it is possible to define it at the beginning of T1_AppInterface.h, before
+ * all headers inclusion to read the hardware core ID register and return the
+ * appropriate T1 core ID offset.
+ * \returns the zero-based T1 logical core index
+ */
+/*
+ * For multi-core T1 integrations with Arm cores this must be always defined here.
+ * For example, with the ST Stellar MCU we read the MPIDR register and return 0..5:
+ *  #define T1_GetCoreIdOffset( ) ({                                        \
+ *      T1_uint32_t mpidr, temp;                                            \
+ *      __asm( "MRC p15, 0, %0, c0, c0, 5" : "=r" (mpidr) :: "memory" );    \
+ *      temp = mpidr & ~(mpidr >> 1);                                       \
+ *      temp = temp + (temp >> 7);                                          \
+ *      temp & 0xFFu;                                                       \
+ *  })
+ */
+
+/*----------------------------------------------------------------------------------*/
+/*--- header includes --------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+#include "T1_config.h"
+#include "T1_baseInterface.h"
+#include "T1_scopeInterface.h"
+#include "T1_delayInterface.h"
+#include "T1_contInterface.h"
+#include "T1_flexInterface.h"
+#include "T1_modInterface.h"
+
+/*----------------------------------------------------------------------------------*/
+/*--- macros and inline functions --------------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+/* Backwards compatibility. */
+#define T1_AppRxCallback( _pData ) T1_AppReceiveFrame( ( _pData ), 8u )
+
+#if defined T1_ENABLE
+
+#    if defined T1_DEFN_CONT_UNMAP_CORE_ID
+T1_DEFN_CONT_UNMAP_CORE_ID
+#    endif /* defined T1_DEFN_CONT_UNMAP_CORE_ID */
+
+/*!
+ * Default configuration for all stopwatches. Possible values are
+ * #T1_CONT_CET_STOPWATCH, #T1_CONT_GET_STOPWATCH and #T1_CONT_DATA_AGE_STOPWATCH.
+ * See \ref USER_STOPWATCHES.
+ */
+#    define T1_CONT_DEFAULT_CONFIG_STOPWATCH( idx_ ) T1_CONT_CET_STOPWATCH( idx_ )
+/*!
+ * Default configuration allocating constraints to be used by the T1-HOST-SW.
+ * This macro needs to be commented to manually configure constraints, see
+ * \ref CONSTRAINTS.
+ */
+#    define T1_CONT_DEFAULT_CONFIG_CONSTRAINT        T1_CONT_INVALID_CONSTRAINT
+
+/*!
+ * Each remote core T1.cont semaphore is used by two cores: the tracing core and the
+ * core that runs the T1.cont analysis.
+ */
+#    define T1_CONT_REMOTE_NOF_SEMAPHORE_USERS       ( 2u )
+
+/*!
+ * \def INC_T1_ERROR_COUNT_
+ * \brief Increase the error counter and trace a user event indicating the core
+ * concerned. Halts the tracing if T1_AF_ALLOW_TRIGGER is set.
+ * \param[in] coreId_         the T1 logical ID of the calling core
+ * \param[in] analyzedCoreId_ the T1 logical ID to record in the user event payload
+ */
+#    define INC_T1_ERROR_COUNT_( coreId_, analyzedCoreId_ )                          \
+        do                                                                           \
+        {                                                                            \
+            T1_errorCount[coreId_] < 255u ? ++T1_errorCount[coreId_] : 255u;         \
+            T1_TraceEventUMPC( ( coreId_ ),                                          \
+                               T1_COMBINE_EVENT_INFO( T1_UE_T1_ERR_CORE_ALL,         \
+                                                      ( analyzedCoreId_ ) ) );       \
+            if( T1_IsFeatureEnabled( T1_AF_ALLOW_TRIGGER ) )                         \
+            {                                                                        \
+                (void)T1_SetStopTriggerPC( ( coreId_ ),                              \
+                                           T1_BUFFER_SIZE_PC( coreId_ ) >> 1u );     \
+            }                                                                        \
+        }                                                                            \
+        while( 0 )
+/*!
+ * \def INC_T1_ERROR_COUNT
+ * \brief Increase the error counter and trace a user event indicating the core
+ * concerned. Halts the tracing if T1_AF_ALLOW_TRIGGER is set.
+ * \param[in] coreId_         the T1 logical ID of the calling core
+ */
+#    if 1 == T1_NOF_CORES
+#        define INC_T1_ERROR_COUNT( coreId_ ) INC_T1_ERROR_COUNT_( 0u, 0u )
+#    else /* 1 < T1_NOF_CORES */
+#        define INC_T1_ERROR_COUNT( coreId_ )                                        \
+            INC_T1_ERROR_COUNT_( ( coreId_ ), ( coreId_ ) )
+#    endif /* 1 == T1_NOF_CORES */
+
+/*!
+ * \def INC_T1_ERROR_COUNT_REMOTE
+ * \brief Increase the error counter and trace a user event indicating the core
+ * concerned. Can be used in context where T1.cont remote core is used or when a
+ * non-communicating core calls T1_AppReceiveFrame(). Halts the tracing
+ * if T1_AF_ALLOW_TRIGGER is set.
+ * \param[in] coreId_         the T1 logical ID of the calling core
+ * \param[in] analyzedCoreId_ the T1 logical ID of the core concerned by the issue
+ */
+#    if 1 == T1_NOF_CORES
+#        define INC_T1_ERROR_COUNT_REMOTE( coreId_, analyzedCoreId_ )                \
+            INC_T1_ERROR_COUNT_( 0u, 0u )
+#    else /* 1 < T1_NOF_CORES */
+#        define INC_T1_ERROR_COUNT_REMOTE( coreId_, analyzedCoreId_ )                \
+            INC_T1_ERROR_COUNT_( ( coreId_ ), ( analyzedCoreId_ ) )
+#    endif /* 1 == T1_NOF_CORES */
+
+/*----------------------------------------------------------------------------------*/
+/*--- external declarations for global variables -----------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+#    define T1_START_SEC_CONST_32
+#    include "T1_MemMap.h"
+T1_DeclarePluginTable( T1_pluginTable );
+#    define T1_STOP_SEC_CONST_32
+#    include "T1_MemMap.h"
+
+#    define T1_CHECKED_START_SEC_VAR_POWER_ON_CLEARED_8
+#    include "T1_MemMap.h"
+T1_EXTERN T1_uint8_t T1_CHECKED_SEC_VAR_POWER_ON_CLEARED_8 T1_errorCount[T1_NOF_CORES];
+#    define T1_CHECKED_STOP_SEC_VAR_POWER_ON_CLEARED_8
+#    include "T1_MemMap.h"
+
+#    if !defined T1_DISABLE_T1_CONT && defined T1_CONT_REMOTE
+#        define T1_START_SEC_CONST_32
+#        include "T1_MemMap.h"
+/*! \brief Pointer to the shared data for remote core T1.cont pairs of cores. */
+T1_EXTERN T1_bakery_t * const T1_SEC_CONST_32
+    T1_contRemoteSemPC[T1_NOF_CORES][T1_CONT_REMOTE_NOF_SEMAPHORE_USERS];
+#        define T1_STOP_SEC_CONST_32
+#        include "T1_MemMap.h"
+#    endif /* ! defined T1_DISABLE_T1_CONT && defined T1_CONT_REMOTE */
+
+#    if 1 < T1_NOF_CORES
+#        define T1_CHECKED_START_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+T1_EXTERN T1_uint8_t T1_CHECKED_SEC_VAR_POWER_ON_CLEARED_8
+    T1_coreTriggerCounter[T1_NOF_CORES];
+#        define T1_CHECKED_STOP_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+
+#        define T1_CHECKED_START_SEC_VAR_POWER_ON_CLEARED_16
+#        include "T1_MemMap.h"
+T1_EXTERN T1_uint16_t T1_CHECKED_SEC_VAR_POWER_ON_CLEARED_16 T1_afterXevents;
+#        define T1_CHECKED_STOP_SEC_VAR_POWER_ON_CLEARED_16
+#        include "T1_MemMap.h"
+#    endif /* 1 < T1_NOF_CORES */
+
+#    if defined T1_COMMS_SHARED_MEM_TX || defined T1_COMMS_SHARED_MEM_RX
+#        define T1_CORE_COMMS_START_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+
+#        if defined T1_COMMS_SHARED_MEM_TX
+/* Read and written by T1-TARGET-SW */
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_targetToHostArray[T1_GCP_MAX_TX_FRAME_SIZE];
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_targetToHostHandshakeAnnounce;
+/* Only read by T1-TARGET-SW (except for in T1_AppInit) */
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_targetToHostHandshakeAcknowledge;
+#        endif /* defined T1_COMMS_SHARED_MEM_TX */
+
+#        if defined T1_COMMS_SHARED_MEM_RX
+/* Only read by T1-TARGET-SW (except for in T1_AppInit) */
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_hostToTargetArray[T1_GCP_MAX_RX_FRAME_SIZE];
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_hostToTargetHandshakeAnnounce;
+/* Read and written by T1-TARGET-SW */
+T1_EXTERN T1_uint8_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_8
+    T1_hostToTargetHandshakeAcknowledge;
+#        endif /* defined T1_COMMS_SHARED_MEM_RX */
+
+#        define T1_CORE_COMMS_STOP_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+
+#        define T1_CORE_COMMS_START_SEC_VAR_POWER_ON_CLEARED_16
+#        include "T1_MemMap.h"
+
+#        if defined T1_COMMS_SHARED_MEM_TX
+/* Read and written by T1-TARGET-SW */
+T1_EXTERN T1_uint16_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_16
+    T1_targetToHostFrameLength;
+#        endif /* defined T1_COMMS_SHARED_MEM_TX */
+
+#        if defined T1_COMMS_SHARED_MEM_RX
+/* Only read by T1-TARGET-SW (except for in T1_AppInit) */
+T1_EXTERN T1_uint16_t T1_CORE_COMMS_SEC_VAR_POWER_ON_CLEARED_16
+    T1_hostToTargetFrameLength;
+#        endif /* defined T1_COMMS_SHARED_MEM_RX */
+
+#        define T1_CORE_COMMS_STOP_SEC_VAR_POWER_ON_CLEARED_16
+#        include "T1_MemMap.h"
+#    endif /* defined T1_COMMS_SHARED_MEM_TX || defined T1_COMMS_SHARED_MEM_RX */
+
+#    if defined T1_CHECK_INTEGRATION
+#        define T1_CHECKED_START_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+T1_EXTERN T1_uint8_t T1_CHECKED_SEC_VAR_POWER_ON_CLEARED_8 T1_checkIntegrationGlobal;
+#        define T1_CHECKED_STOP_SEC_VAR_POWER_ON_CLEARED_8
+#        include "T1_MemMap.h"
+#        define T1_START_SEC_CONST_8
+#        include "T1_MemMap.h"
+T1_EXTERN T1_uint8_t * const T1_SEC_CONST_8 T1_checkIntegrationPC[];
+#        define T1_STOP_SEC_CONST_8
+#        include "T1_MemMap.h"
+#    endif /* defined T1_CHECK_INTEGRATION */
+
+#endif /* defined T1_ENABLE */
+
+/*----------------------------------------------------------------------------------*/
+/*--- forward declarations for global functions ------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+/* wrapper functions defined in T1_AppInterface.c */
+#define T1_START_SEC_CODE
+#include "T1_MemMap.h"
+T1_EXTERN void T1_CODE T1_AppSetStopTriggerAllCores( T1_uint8Least_t coreId,
+                                                     T1_nOfEntries_t afterXevents );
+T1_EXTERN void T1_CODE T1_AppInit( void );
+T1_EXTERN void T1_CODE T1_AppBackgroundHandler( void );
+T1_EXTERN void T1_CODE T1_AppHandler( void );
+T1_EXTERN void T1_CODE T1_AppReceiveFrame( T1_uint8_t const T1_FARPTR pData,
+                                           T1_frameSize_t nOfBytes );
+#if defined T1_POLLING_TRANSMIT
+void T1_CODE T1_AppReadData( T1_uint8_t const **ppData, T1_frameSize_t *pNOfBytes );
+#else /* !defined T1_POLLING_TRANSMIT */
+#    define T1_AppReadData( ppData_, pNOfBytes_ ) ( (void)0 )
+#endif /* defined T1_POLLING_TRANSMIT */
+
+#if defined T1_ENABLE && defined T1_CHECK_INTEGRATION
+#    if !defined T1_CHECK_INTEGRATION_INV_PARAM
+#        error Please use the invocation file parameter -checkIntegration to enable the check integration feature!
+#    endif /* ! defined T1_CHECK_INTEGRATION_INV_PARAM */
+#    if !defined T1_SW_CHECK_INTEGRATION_CORE_ALL
+#        error The stopwatch T1_SW_CHECK_INTEGRATION_CORE_ALL used by T1_CHECK_INTEGRATION must be defined!
+#    endif /* ! defined T1_SW_CHECK_INTEGRATION_CORE_ALL */
+#    if !defined T1_UDE_CHECK_INTEGRATION_SYNCTIMER_CORE_ALL
+#        error The user data event T1_UDE_CHECK_INTEGRATION_SYNCTIMER_CORE_ALL used by T1_CHECK_INTEGRATION must be defined!
+#    endif /* ! defined T1_UDE_CHECK_INTEGRATION_SYNCTIMER_CORE_ALL */
+#    if !defined T1_DL_CHECK_INTEGRATION_CORE_ALL
+#        error The delay T1_DL_CHECK_INTEGRATION_CORE_ALL used by T1_CHECK_INTEGRATION must be defined!
+#    endif /* ! defined T1_DL_CHECK_INTEGRATION_CORE_ALL */
+T1_EXTERN void T1_CODE T1_CheckIntegrationInitPC( T1_uint8Least_t coreId );
+T1_EXTERN void T1_CODE T1_CheckIntegrationHandlerPC( T1_uint8Least_t coreId );
+#    define T1_CheckIntegrationInit( )                                               \
+        T1_CheckIntegrationInitPC( T1_GetCoreIdOffset( ) )
+#    define T1_CheckIntegrationHandler( )                                            \
+        T1_CheckIntegrationHandlerPC( T1_GetCoreIdOffset( ) )
+#else /* ! defined T1_ENABLE || ! defined T1_CHECK_INTEGRATION */
+#    define T1_CheckIntegrationInitPC( coreId_ )    ( (void)0 )
+#    define T1_CheckIntegrationHandlerPC( coreId_ ) ( (void)0 )
+#    define T1_CheckIntegrationInit( )              ( (void)0 )
+#    define T1_CheckIntegrationHandler( )           ( (void)0 )
+#endif /* defined T1_ENABLE && defined T1_CHECK_INTEGRATION */
+#define T1_STOP_SEC_CODE
+#include "T1_MemMap.h"
+
+/*----------------------------------------------------------------------------------*/
+
+#endif /* T1_APPINTERFACE_H_ */
+
+       ]]></HeaderContent>
+      </ExternalData>
+      <CommunicationConfig UseSameRxTxChannel="true">
+        <RxChannel>
+          <LayerConfig>
+            <Name>pure T1</Name>
+            <RoutingParameters xmlns:q5="Gliwa-CommunicationConfig" xsi:type="q5:GcpRoutingParameterType">
+              <AppId>0</AppId>
+              <TargetId>3</TargetId>
+            </RoutingParameters>
+            <BusRoutingParameter xmlns:q6="Gliwa-CommunicationConfig" xsi:type="q6:TcpIpRoutingParameterType">
+              <IpAddress>192.168.42.10</IpAddress>
+              <EcuPort>45000</EcuPort>
+              <PcPort>45000</PcPort>
+              <UseUdp>true</UseUdp>
+              <TxDataSize>24</TxDataSize>
+            </BusRoutingParameter>
+          </LayerConfig>
+          <BusRef>
+            <Name>Ethernet</Name>
+            <BusType>ETHERNET</BusType>
+          </BusRef>
+          <Direction>RX</Direction>
+        </RxChannel>
+        <TxChannel>
+          <LayerConfig>
+            <Name>pure T1</Name>
+            <RoutingParameters xmlns:q7="Gliwa-CommunicationConfig" xsi:type="q7:GcpRoutingParameterType">
+              <AppId>0</AppId>
+              <TargetId>3</TargetId>
+            </RoutingParameters>
+            <BusRoutingParameter xmlns:q8="Gliwa-CommunicationConfig" xsi:type="q8:TcpIpRoutingParameterType">
+              <IpAddress>192.168.42.10</IpAddress>
+              <EcuPort>45000</EcuPort>
+              <PcPort>45000</PcPort>
+              <UseUdp>true</UseUdp>
+              <TxDataSize>24</TxDataSize>
+            </BusRoutingParameter>
+          </LayerConfig>
+          <BusRef>
+            <Name>Ethernet</Name>
+            <BusType>ETHERNET</BusType>
+          </BusRef>
+          <Direction>TX</Direction>
+        </TxChannel>
+      </CommunicationConfig>
+    </System>
+    <Buses FixedBlocksize="false">
+      <Name>Ethernet</Name>
+      <Type>ETHERNET</Type>
+      <HwIdentifier>
+        <Name>Ethernet 7</Name>
+        <PcIpAddress>192.168.42.100</PcIpAddress>
+        <HwType>LAN_ADAPTER</HwType>
+      </HwIdentifier>
+      <TxCycleMs>20</TxCycleMs>
+    </Buses>
+    <CommunicationConfigList>
+      <TargetConnectionConfig Name="Default Connection">
+        <SystemConnectionList SID="2">
+          <SystemCommunicationConfig UseSameRxTxChannel="true">
+            <RxChannel>
+              <LayerConfig>
+                <Name>pure T1</Name>
+                <RoutingParameters xmlns:q9="Gliwa-CommunicationConfig" xsi:type="q9:GcpRoutingParameterType">
+                  <AppId>0</AppId>
+                  <TargetId>2</TargetId>
+                </RoutingParameters>
+                <BusRoutingParameter xmlns:q10="Gliwa-CommunicationConfig" xsi:type="q10:TcpIpRoutingParameterType">
+                  <IpAddress>192.168.42.10</IpAddress>
+                  <EcuPort>45000</EcuPort>
+                  <PcPort>45000</PcPort>
+                  <UseUdp>true</UseUdp>
+                  <TxDataSize>24</TxDataSize>
+                </BusRoutingParameter>
+              </LayerConfig>
+              <BusRef>
+                <Name>Ethernet</Name>
+                <BusType>ETHERNET</BusType>
+              </BusRef>
+              <Direction>RX</Direction>
+            </RxChannel>
+            <TxChannel>
+              <LayerConfig>
+                <Name>pure T1</Name>
+                <RoutingParameters xmlns:q11="Gliwa-CommunicationConfig" xsi:type="q11:GcpRoutingParameterType">
+                  <AppId>0</AppId>
+                  <TargetId>2</TargetId>
+                </RoutingParameters>
+                <BusRoutingParameter xmlns:q12="Gliwa-CommunicationConfig" xsi:type="q12:TcpIpRoutingParameterType">
+                  <IpAddress>192.168.42.10</IpAddress>
+                  <EcuPort>45000</EcuPort>
+                  <PcPort>45000</PcPort>
+                  <UseUdp>true</UseUdp>
+                  <TxDataSize>24</TxDataSize>
+                </BusRoutingParameter>
+              </LayerConfig>
+              <BusRef>
+                <Name>Ethernet</Name>
+                <BusType>ETHERNET</BusType>
+              </BusRef>
+              <Direction>TX</Direction>
+            </TxChannel>
+          </SystemCommunicationConfig>
+        </SystemConnectionList>
+        <SystemConnectionList SID="3">
+          <SystemCommunicationConfig UseSameRxTxChannel="true">
+            <RxChannel>
+              <LayerConfig>
+                <Name>pure T1</Name>
+                <RoutingParameters xmlns:q13="Gliwa-CommunicationConfig" xsi:type="q13:GcpRoutingParameterType">
+                  <AppId>0</AppId>
+                  <TargetId>3</TargetId>
+                </RoutingParameters>
+                <BusRoutingParameter xmlns:q14="Gliwa-CommunicationConfig" xsi:type="q14:TcpIpRoutingParameterType">
+                  <IpAddress>192.168.42.10</IpAddress>
+                  <EcuPort>45000</EcuPort>
+                  <PcPort>45000</PcPort>
+                  <UseUdp>true</UseUdp>
+                  <TxDataSize>24</TxDataSize>
+                </BusRoutingParameter>
+              </LayerConfig>
+              <BusRef>
+                <Name>Ethernet</Name>
+                <BusType>ETHERNET</BusType>
+              </BusRef>
+              <Direction>RX</Direction>
+            </RxChannel>
+            <TxChannel>
+              <LayerConfig>
+                <Name>pure T1</Name>
+                <RoutingParameters xmlns:q15="Gliwa-CommunicationConfig" xsi:type="q15:GcpRoutingParameterType">
+                  <AppId>0</AppId>
+                  <TargetId>3</TargetId>
+                </RoutingParameters>
+                <BusRoutingParameter xmlns:q16="Gliwa-CommunicationConfig" xsi:type="q16:TcpIpRoutingParameterType">
+                  <IpAddress>192.168.42.10</IpAddress>
+                  <EcuPort>45000</EcuPort>
+                  <PcPort>45000</PcPort>
+                  <UseUdp>true</UseUdp>
+                  <TxDataSize>24</TxDataSize>
+                </BusRoutingParameter>
+              </LayerConfig>
+              <BusRef>
+                <Name>Ethernet</Name>
+                <BusType>ETHERNET</BusType>
+              </BusRef>
+              <Direction>TX</Direction>
+            </TxChannel>
+          </SystemCommunicationConfig>
+        </SystemConnectionList>
+      </TargetConnectionConfig>
+    </CommunicationConfigList>
+  </Project>
+</T1>
